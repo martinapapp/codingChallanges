@@ -15,7 +15,7 @@ Example input: "elephant"
 Example output: "elephant"
  */
 
-//db
+//obj
 const emojis = {
     "smile": "😊",
     "angry": "😠",
@@ -25,7 +25,38 @@ const emojis = {
     "dog":   "🐕"
 }
 
+/**pseudo
+ * 1. check if starts or ends with colon
+ *    1.1. no: return word 
+ *    1.2. yes: remove colons
+ * 2. check if in obj
+ *    2.1. yes: return emoji 
+ *    2.2. no : return slice
+ */
 
+const emojifyWord = (word) =>{
+
+    if(!word.startsWith(":") && !word.endsWith(":")) return word
+    const slice = word.slice(1, -1);
+
+    if(emojis[slice]){
+         return emojis[slice]
+    } else {
+        return slice;
+    } 
+
+}
+
+/**pseudo
+ * 1. split phrase into words
+ * 2. loop through newPhrase and use helper function
+ * 3. return joined newPhrase
+ */
+
+function emojifyPhrase(phrase){
+    const newPhrase = phrase.split(" ").map(word => emojifyWord(word));
+    return newPhrase.join(" ")
+}
 
 //test
 console.log(emojifyWord(":heart:"))
