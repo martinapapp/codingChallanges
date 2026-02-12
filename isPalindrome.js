@@ -9,6 +9,13 @@ Example input: "rotator"
 Example output: true
 */ 
 
+/**
+ * 1. store lowercased version
+ * 2. create space for reversed str version
+ * 3. get reversed string by loop starting at the end and add to the reversed str space
+ * 4. return and check if original and reversed are the same
+ */
+
 function isPalindrome(str){
 
     const lowercaseStr = str.toLowerCase()
