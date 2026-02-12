@@ -26,17 +26,16 @@ output:
 function awardBonuses(){
     for(let i = 1; i <= 100; i++){
         switch(true){
-            case (i % 3 === 0) : 
-                console.log(`${i} - $100,000 bonus!`) 
-                break
-            case (i % 5 === 0) : 
-                console.log(`${i} - Vacation!`)
-                break
             case (i % 3 === 0 && i % 5 === 0) : 
                 console.log(`${i} - JACKPOT! 1 Million and a Yacht!`)
                 break
-            default : 
-                console.log(`${i} - :(`) 
+            case (i % 3 === 0) : 
+                console.log( `${i} - Vacation!`) 
+                break
+            case (i % 5 === 0) : 
+                console.log(`${i} - $100,000 bonus!`)
+                break
+            default : console.log(`${i} - :(`) 
         }
     }
 }
