@@ -9,6 +9,18 @@ Example input: "rotator"
 Example output: true
 */ 
 
+function isPalindrome(str){
+
+    const lowercaseStr = str.toLowerCase()
+    let reversedStr = ""
+    for(let i = lowercaseStr.length-1; i >= 0; i--){
+        reversedStr += lowercaseStr[i]
+    }
+    
+    return reversedStr === lowercaseStr
+    
+}
+
 // test
 console.log(isPalindrome("abbA"));
 console.log(isPalindrome("Civic"));
