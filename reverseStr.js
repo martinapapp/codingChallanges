@@ -14,13 +14,26 @@ const messages = [
             "egrahc ni stac tuP", 
         ]
 
+/**pseudo
+ * 1. store new reversed string
+ * 2. loop through string from the end and go backwards
+ *      2.1. adding values to the reversed string
+ * 3. return reversed string
+ */
 
-function reverseString(arr){
-    return arr;
+function reverseString(str){
+    let reveresedStr = ""
+    for(let i = str.length-1; i >= 0; i--){
+        reveresedStr += str[i]
+    }
+
+    return reveresedStr
 }
 
 function reverseStringsInArray(arr){
-    return arr;
+    const reversedArr = []
+    arr.map(string => reversedArr.push(reverseString(string))).join("")
+    return reversedArr
 }
 
 //test
