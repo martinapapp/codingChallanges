@@ -16,9 +16,25 @@ const gameNightFood = {
     "🥗 salads": 7,
     "🍝 pasta": 5
 }
+/**
+ * 1. store highest value
+ * 2. store winner
+ * 3. loop through obj values
+ *  3.1. if current value is bigger than current highest value: update highest value and set winner
+ * 4. return highest value and winner item
+ */
 
 function findTheWinner(obj){
-
+    let highestVote = null
+    let winner = ""
+    
+    for(let item in obj){
+        if(obj[item] > highestVote){
+            highestVote = obj[item]
+            winner = item
+        }
+    }
+    return `The winner is ${winner} with ${highestVote} votes!`
 }
 
 console.log(findTheWinner(gameNightFood));
