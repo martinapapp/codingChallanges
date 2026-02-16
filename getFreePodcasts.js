@@ -75,6 +75,22 @@ const podcasts =  [
     },
 ]
 
+/**pseudo
+ * 1. filter free pods
+ * 2. map free pods and return obj
+ * 3. return mapped pods
+ */
+
+function getFreePodcasts(data){
+    return data.filter(pod => pod.paid === false)
+                .map(pod => {
+                    return {
+                        title: pod.title,
+                        rating: pod.rating,
+                        paid: pod.paid
+                    }
+                })
+}
 
 //test
 console.log(getFreePodcasts(podcasts))
