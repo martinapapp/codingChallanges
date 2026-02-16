@@ -51,3 +51,12 @@ function getSaleItems(data){
 //test
 const shoppingCart = getSaleItems(products)
 console.log(shoppingCart)
+
+//problem
+/**
+ Example output: 73.44
+ */
+
+
+ //test
+ console.log(total(shoppingCart))
