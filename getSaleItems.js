@@ -49,8 +49,7 @@ function getSaleItems(data){
 }
 
 //test
-const shoppingCart = getSaleItems(products)
-console.log(shoppingCart)
+// console.log(getSaleItems(products))
 
 //problem
 /**
@@ -67,7 +66,7 @@ function total(arr){
 }
 
  //test
- console.log(total(shoppingCart))
+//  console.log(total(products))
 
  //problem
  /**
@@ -78,5 +77,12 @@ items in the shopping cart.
 Expected output: 9.97 
   */
 
+function totalSavory(data){
+    return data.reduce((total, current) => {
+        if(current.type === "savory") return total += current.price
+        return total
+    }, 0)
+}
+
 //test
-console.log(totalSavory(shoppingCart))
+console.log(totalSavory(products))
