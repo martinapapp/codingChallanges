@@ -68,3 +68,15 @@ function total(arr){
 
  //test
  console.log(total(shoppingCart))
+
+ //problem
+ /**
+Use reduce() and only reduce() to calculate and return 
+the total cost of only the savory
+items in the shopping cart.
+
+Expected output: 9.97 
+  */
+
+//test
+console.log(totalSavory(shoppingCart))
