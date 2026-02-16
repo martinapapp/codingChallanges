@@ -57,6 +57,14 @@ console.log(shoppingCart)
  Example output: 73.44
  */
 
+/**pseudo
+ * 1. get total (.reduce())
+ * 2. return total with 2 decimal places
+ */
+function total(arr){
+    const total = arr.reduce((total, current)=> {return total + current.price}, 0)
+    return total.toFixed(2)
+}
 
  //test
  console.log(total(shoppingCart))
