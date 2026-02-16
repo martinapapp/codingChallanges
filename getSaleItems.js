@@ -1,5 +1,3 @@
-import products from "./data.js";
-
 /**
  Expected output: 
    [
@@ -10,7 +8,7 @@ import products from "./data.js";
  */
 
 // data
-export default [
+const products = [
     {
         item: "🍭",
         price: 2.99,
@@ -44,7 +42,10 @@ export default [
 ]
 
 function getSaleItems(data){
-
+ return data.filter(item => item.type === "sweet")
+            .map(({item, price}) => {
+                return {item, price}
+            })
 }
 
 //test
