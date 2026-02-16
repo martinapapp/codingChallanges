@@ -13,9 +13,32 @@ Your function should NOT count spaces and should not be case sensitive (a
 lowercase t and a capital T should be considered the same character).
  */
 
+/**pseudo:
+ * 1. save count empty obj
+ * 2. edge case: if input length === 0, console: Please give your name for counting your letters
+ * 3. store lowercase version and remove spaces
+ * 4. loop through lowercasename 
+ *   4.1. if key exists: add 1
+ *   4.2. else: set value 1 
+ * 5. return empty count
+ */
+
 function countChars(str){
-   
+    let count = {}
+    if(str.length === 0){
+        console.log("Please give your name for counting your letters")
+        return
+    } 
+    const noCapsName = str.toLowerCase().replaceAll(" ", "")
+    for (let letter of noCapsName) {
+        if (count[letter]) {
+            count[letter] += 1;
+        }else {
+            count[letter] = 1;
+        }
+    }
+    return count
 }
 
 //test
-console.log(countChars("Anita Martina Papp"))
+console.log(countChars("Martina"))
