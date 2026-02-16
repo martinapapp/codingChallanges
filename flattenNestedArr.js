@@ -18,7 +18,24 @@ const kittyPrizes = [
     ["🐟","💐", "💐"], "💵", "💵", ["🐟"], "🐟"
 ];
 
+/**
+ * 1. init empty flat array
+ * 2. loop through arr
+ *  2.1. if it is a string push to flat array
+ *  2.2. if it is an array, loop and push each item
+ * 3. return flat array
+ * (or return arr.flat())
+ */
 function flatten(arr){
+    let flatArr = []
+    for(let item of arr){
+        if(Array.isArray(item)){
+            item.forEach(str => flatArr.push(str))
+        }else{
+            flatArr.push(item)
+        }
+    }
+    return flatArr
 }
 
 console.log(flatten(kittyPrizes));
