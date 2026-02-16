@@ -21,5 +21,15 @@ const eggScrambleRecipe = [
             "🌶️ hot sauce"
         ]
 
+/**pseudo: 
+ * 1. create set
+ * 2. transfrom set to array
+ * 3. return recipe
+ */
+function removeDupesFromArray(arr){
+  const recipeSet = new Set(arr)
+  const recipeArr = Array.from(recipeSet)
+  return recipeArr
+}
 
 console.log(removeDupesFromArray(eggScrambleRecipe));
