@@ -34,10 +34,17 @@ const postData = [
         likes: 275
      },
 ]
-   
+
+/**pseudo
+ * 1. get sum (.reduce())
+ * 2. get avg (sum / data length)
+ * 3. return avg
+ */
 
 function calcAverageLikes(data){
-  
+    const sum = data.reduce((total, current)=> {return total + current.likes}, 0)
+    const avg = sum / data.length
+    return avg.toFixed(2)
 } 
 
 //test
