@@ -13,10 +13,64 @@ Then log the item and the price to the console:
 ... continued
  */
 
+//data
+const products =[
+    {
+        product: "🍭",
+        price: 2.99,
+    },
+    {
+        product: "🍫",
+        price: .99, 
+    },
+    {
+        product: "🏡",
+        price: 40000000
+    },
+    {
+        product: "🧁",
+        price: .99, 
+    },
+    {
+        product: "📚",
+        price: .99, 
+    },
+    {
+        product: "⏰",
+        price: 13.99, 
+    }, 
+    {
+        product: "🍬",
+        price: .89, 
+    },
+    {
+        product: "🥎",
+        price: 3.99,
+    }, 
+    {
+        product: "🎸",
+        price: 13.99, 
+    }, 
+    {
+        product: "🎨",
+        price: 23.99, 
+    }, 
+    {
+        product: "💕",
+        price: 0, 
+    }, 
+]
 
+/**pseudo
+ * 1. return ascending order
+ * 2. log each item
+ */
 function sortProducts(data){
-    
+    return data.sort((a,b)=> a.price-b.price)
 }
 
+//test
 const listByCheapest = sortProducts(products)
 console.log(listByCheapest)
+
+listByCheapest.forEach(item => console.log(item.product, item.price) )
