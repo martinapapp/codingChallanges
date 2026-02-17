@@ -32,9 +32,25 @@ const anagrams = [
     "mechatronic masterbatch", 
     "bam ratchet mechatronics"
 ]
-
+/**pseudo
+ * 1. get sorted phrases without white spaces
+ */
+//helper
+function sortPhrase(phrase){
+    return phrase.toLowerCase().split("").sort().join("").trim()
+}
+/**pseudo
+ * 1. return loop array (.filter())
+ *  1.1. use helper with anagram
+ *  1.2. use helper with arr itms
+ *  1.3. return which strictly equal
+ */
 function isAnagramInArray(anagram, arr){
-
+    return arr.filter(item => {
+        const sortedAngram = sortPhrase(anagram)
+        const sortedArrItem = sortPhrase(item)
+        return sortedAngram === sortedArrItem
+    })
 }
 
 //test
