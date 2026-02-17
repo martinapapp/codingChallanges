@@ -71,13 +71,21 @@ const podcasts = [
 const awards = ["🏆", "⭐", "💎", "🥇", "👑"];
 
 function getHosts(data){
-   
+   return data.reduce((total, current)=>{
+        return [...total, ...current.hosts]
+   }, [])
 }
 
 function assignAwards(data){
- 
+    const hosts = getHosts(data)
+    
+    return hosts.map(host => {
+        const getRandomIndex = Math.floor(Math.random()*awards.length)
+        const randomAward = awards[getRandomIndex]
+        return `${randomAward} ${host}`
+    })
 }
 
 //test
-console.log(getHosts(podcasts));
-console.log(assignAwards(podcasts));
+console.log(getHosts(podcasts))
+console.log(assignAwards(podcasts))
