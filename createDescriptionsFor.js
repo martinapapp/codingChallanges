@@ -92,8 +92,21 @@ const podcasts = [
     },
 ]
 
+/**pseudo
+ * 1. loop through data
+ *  1.1. create description value
+ *  1.2. return objs with the new description prop
+ */
+
 function createDescriptionsFor(data){
-   
+    return data.map(pod =>{
+        let descriptionValue = `${pod.title} is a ${pod.duration} minute ${pod.genre} podcast hosted by ${pod.hosts}`
+        return {
+            ...pod,
+            description : descriptionValue
+        }
+    })
+    
 }
 
 //test
